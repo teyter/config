@@ -11,6 +11,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 
+# env vars
+export QT_QPA_PLATFORMTHEME=qt6ct
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 # colored ls
@@ -51,11 +54,13 @@ c() {
 
 alias zshrc="nvim ~/.config/zsh/.zshrc"
 alias hconf="nvim ~/.config/hypr/hyprland.conf"
+alias ff="start-hyprland"
 alias vimrc="nvim ~/.vimrc"
 alias srcz="source ~/.config/zsh/.zshrc"
 alias greyniraws="ssh -i ~/.ssh/siminn-tv-voice.pem ubuntu@54.74.55.89"
 alias gaur="adb reverse tcp:8081 tcp:8081"
 alias py="python3"
+alias reload="hyprctl reload"
 #
 # ls alias
 alias ll="ls -alF"
@@ -63,7 +68,7 @@ alias la="ls -A"
 alias l="ls -CF"
 # git alias
 alias gs="git status"
-alias ga="git add ."
+alias ga="git add"
 alias gcm="git commit -m"
 alias gpush="git push"
 alias gpull="git pull"
