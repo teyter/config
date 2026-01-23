@@ -36,3 +36,9 @@ systemd/
 xfce4/
 Thunar/
 wofi/
+Kvantum/
+QtProject.conf
+dolphinrc
+go/
+qt5ct/
+qt6ct/
