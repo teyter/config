@@ -1,0 +1,4 @@
+tree
+hyprshot
+ranger open nvim
+waybar icons smooshed
