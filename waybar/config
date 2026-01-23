@@ -1,0 +1,34 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "hyprland/language"],
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰤭  {ifname}",
+    "format-disconnected": "  Disconnected",
+    "tooltip": true,
+    "on-click": "nm-connection-editor"
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": "  muted"
+  },
+
+  "battery": {
+    "format": "{capacity}%"
+  },
+
+  "hyprland/language": {
+    "format": "{short}"
+    }
+}

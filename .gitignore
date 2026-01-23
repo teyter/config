@@ -1,0 +1,38 @@
+# Caches
+**/cache/
+**/.cache/
+**/Cache/
+**/GPUCache/
+
+# Logs
+**/*.log
+
+# Secrets / state
+**/secrets*
+**/token*
+**/*.key
+**/*.pem
+**/credentials*
+**/session*
+
+# App state
+**/state/
+**/sessions/
+**/lock/
+**/history
+
+# Node / build junk
+**/node_modules/
+
+# Screenshots, temp
+**/tmp/
+**/temp/
+
+# Junk configs
+dconf/
+mozilla/
+pulse/
+systemd/
+xfce4/
+Thunar/
+wofi/
