@@ -3,3 +3,11 @@ hyprshot
 ranger open nvim
 waybar icons smooshed
 zsh fzf-completion
+fokking super+j move drasl
+autocomplete menu remove
+waybar
+  -icons smoosh
+  -rm disk
+  -old network name and icon
+  -language
+  -highlight workspaces
