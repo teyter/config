@@ -1,0 +1,12 @@
+{
+	"modules-right": [
+		"hyprland/language",
+	],
+
+	"hyprland/language": {
+		"format": "{short}",
+	},
+	"tray": {
+		"icon-size": 16 // font-size 14
+	}
+}

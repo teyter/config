@@ -1,121 +1,148 @@
-// -*- mode: json -*-
+// ──────────────────────────────────────────────────────────────────────────
+//  °˖* ૮(  • ᴗ ｡)っ🍸  pewdiepie/archdaemon/dionysh shhheersh
+//  Waybar config
+//  vers. 1.0.0
+// ──────────────────────────────────────────────────────────────────────────
 
 {
-	"layer": "top",
-	"position": "top",
+  "layer": "top",
+  "position": "top",
+  "margin-top": 12,
+  "margin-bottom": -8,
+  "width": 2010,
+  "height": 34,
 
-	"modules-left": [
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
-	],
-	"modules-center": [
-		"custom/left-arrow-dark",
-		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
-	],
-	"modules-right": [
-		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"hyprland/language",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"tray"
-	],
+  // ── Modules Layout ───────────────────────────────────────────────
+  "modules-left": [
+    "clock",
+    "custom/power",
+    "network",
+    "bluetooth",
+  ],
 
-	"custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
+  "modules-center": [
+    "custom/workspace-1",
+    "custom/workspace-2",
+    "custom/asus-profile",
+    "custom/workspace-3",
+    "custom/workspace-4"
+  ],
 
-	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}"
-	},
+  "modules-right": [
+    "custom/battery",
+    "custom/volume",
+    "custom/brightness"
+  ],
 
-	"clock#1": {
-		"format": "{:%a}",
-		"tooltip": false
-	},
-	"clock#2": {
-		"format": "{:%H:%M}",
-		"tooltip": false
-	},
-	"clock#3": {
-		"format": "{:%m-%d}",
-		"tooltip": false
-	},
+  // ── Clock ────────────────────────────────────────────────────────
+  "clock": {
+    "tooltip-format": "{calendar}",
+    "format-alt": "  {:%a, %d %b %Y}",
+    "format": "[   {:%I:%M %p} ]"
+  },
 
-	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				""
-			]
-		},
-		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "Mem {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"hyprland/language": {
-		"format": "{short}",
-	},
-	"tray": {
-		"icon-size": 16
-	}
+  // ── Network ──────────────────────────────────────────────────────
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": ["[ 󰤯 ]", "[ 󰤟 ]", "[ 󰤢 ]", "[ 󰤥 ]", "[ 󰤨 ]"],
+    "format-ethernet": "󰀂",
+    "format-alt": "󱛇",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "nm-connection-editor",
+    "interval": 5,
+    "nospacing": 1
+  },
+
+  // ── Keyboard ─────────────────────────────────────────────────────
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": " {layout}"
+  },
+
+  // ── Bluetooth ────────────────────────────────────────────────────
+  "bluetooth": {
+    "format": "{icon}",
+    "format-icons": {
+      "enabled": "[  ]",
+      "disabled": "[ 󰂲 ]"
+    },
+    "on-click": "~/.config/waybar/scripts/bluetooth-toggle.sh",
+    "tooltip-format": "Bluetooth is {status}",
+    "interval": 5
+  },
+
+  // ── Battery (scripted + built-in) ────────────────────────────────
+  "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.sh",
+    "return-type": "json",
+    "interval": 10,
+    "on-click": "xfce4-power-manager-settings"
+  },
+
+
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-icons": {
+      "charging": [
+        "󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"
+      ],
+      "default": [
+        "󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"
+      ]
+    },
+    "format-full": "Charged ",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": true
+  },
+
+  // ── Brightness ───────────────────────────────────────────────────
+  "custom/brightness": {
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "~/.config/waybar/scripts/brightness-toggle.sh",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  "backlight": {
+    "format": "󰛨  {percent}%",
+    "format-icons": ["󰃞","󰃟","󰃠","󰃝","󰃜","󰃛"],
+    "class": "flicker-bar",
+    "on-click": "~/.config/waybar/scripts/brightness-slider.sh"
+  },
+
+  // ── Volume ───────────────────────────────────────────────────────
+  "custom/volume": {
+    "exec": "~/.config/waybar/scripts/volume.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+
+
+  // ── Power ────────────────────────────────────────────────────────
+  "custom/power": {
+    "format": "[ 󰤆 ]",
+    "tooltip": true,
+    "tooltip-format": "Power Menu",
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
+  },
+
+  // ── Spacer ───────────────────────────────────────────────────────
+  "custom/squares": {
+    "format": " ",
+    "tooltip": false
+  }
 }
+
