@@ -1,2 +1,6 @@
 
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+
+//@theme "/home/teytur/.local/share/rofi/themes/catppuccin-mocha.rasi"
+
 @theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"

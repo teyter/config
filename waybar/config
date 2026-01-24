@@ -70,7 +70,8 @@
       "enabled": "[  ]",
       "disabled": "[ 󰂲 ]"
     },
-    "on-click": "~/.config/waybar/scripts/bluetooth-toggle.sh",
+    "on-click": "blueman-manager",
+    "on-click-right": "~/.config/waybar/scripts/bluetooth-toggle.sh",
     "tooltip-format": "Bluetooth is {status}",
     "interval": 5
   },
@@ -153,6 +154,7 @@
     "return-type": "json",
     "interval": 1,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
     "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
   },
