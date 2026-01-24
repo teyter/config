@@ -8,4 +8,3 @@ if [ "$active" -eq 1 ]; then
 else
   echo "[А]"
 fi
-

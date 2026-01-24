@@ -7,7 +7,7 @@
 /* === Base Waybar Styling ================================================= */
 
 waybar * {
-  border: 4px;
+  border: none;
   border-radius: 4px;
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font";
@@ -28,6 +28,8 @@ window#waybar {
   border: 3px solid #61afef;
   border-left: 3px solid #56b6c2;
   border-right: 3px solid #56b6c2;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -35,7 +37,8 @@ window#waybar {
 
 #workspaces {
   background-color: transparent;
-  padding-left: 40px;
+  padding-left: 0px;
+  margin-left: 6px;
 }
 
 #workspaces button {
@@ -72,6 +75,7 @@ window#waybar {
 #battery,
 #pulseaudio,
 #backlight,
+#custom-vpn,
 #clock,
 #tray {
   padding: 6px 12px;
@@ -117,6 +121,8 @@ window#waybar {
   font-size: 12px;
   color: #fab387;
 }
+
+
 
 /* === Battery ============================================================= */
 
@@ -187,6 +193,7 @@ window#waybar {
 #custom-volume:hover,
 #pulseaudio:hover,
 #network:hover,
+#custom-vpn:hover,
 #bluetooth:hover,
 #custom-bluetooth:hover,
 #custom-power:hover,
@@ -206,6 +213,9 @@ window#waybar {
 /* === Tooltips ============================================================ */
 
 tooltip {
+  padding: 10px 12px;
+  border-radius: 8px;
+  min-width: 260px;
   color: #56b6c2;
   background-color: #3b4252;
   border: 1px solid #56b6c2;
@@ -214,5 +224,7 @@ tooltip {
 
 tooltip label {
   color: #78bec7;
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 12px;
 }
 

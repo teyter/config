@@ -11,3 +11,5 @@ waybar
   -old network name and icon
   -language
   -highlight workspaces
+
+fzf-completion osh16

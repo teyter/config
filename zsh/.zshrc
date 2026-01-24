@@ -54,7 +54,7 @@ c() {
 
 alias zshrc="nvim ~/.config/zsh/.zshrc"
 alias hconf="nvim ~/.config/hypr/hyprland.conf"
-alias ff="start-hyprland"
+alias ff="fastfetch"
 alias vimrc="nvim ~/.vimrc"
 alias srcz="source ~/.config/zsh/.zshrc"
 alias greyniraws="ssh -i ~/.ssh/siminn-tv-voice.pem ubuntu@54.74.55.89"

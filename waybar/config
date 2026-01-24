@@ -7,10 +7,11 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 12,
-  "margin-bottom": -8,
-  "width": 2010,
-  "height": 34,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "margin-top": 0,
+  "margin-bottom": 0,
 
   // ── Modules Layout ───────────────────────────────────────────────
   "modules-left": [
@@ -23,7 +24,6 @@
   "modules-center": [
     "custom/workspace-1",
     "custom/workspace-2",
-    "custom/asus-profile",
     "custom/workspace-3",
     "custom/workspace-4"
   ],
@@ -38,7 +38,7 @@
   "clock": {
     "tooltip-format": "{calendar}",
     "format-alt": "  {:%a, %d %b %Y}",
-    "format": "[   {:%I:%M %p} ]"
+    "format": "[   {:%H:%M} ]"
   },
 
   // ── Network ──────────────────────────────────────────────────────
@@ -103,6 +103,7 @@
     "tooltip": true
   },
 
+
   // ── Brightness ───────────────────────────────────────────────────
   "custom/brightness": {
     "exec": "~/.config/waybar/scripts/brightness.sh",
@@ -118,6 +119,32 @@
     "format-icons": ["󰃞","󰃟","󰃠","󰃝","󰃜","󰃛"],
     "class": "flicker-bar",
     "on-click": "~/.config/waybar/scripts/brightness-slider.sh"
+  },
+
+  // ── Workspaces (custom scripts) ──────────────────────────────────
+  "custom/workspace-1": {
+    "exec": "~/.config/waybar/scripts/workspaces/workspace-1.sh",
+    "interval": 1,
+    "on-click": "hyprctl dispatch workspace 1",
+    "tooltip": "Switch to workspace 1"
+  },
+  "custom/workspace-2": {
+    "exec": "~/.config/waybar/scripts/workspaces/workspace-2.sh",
+    "interval": 1,
+    "on-click": "hyprctl dispatch workspace 2",
+    "tooltip": "Switch to workspace 2"
+  },
+  "custom/workspace-3": {
+    "exec": "~/.config/waybar/scripts/workspaces/workspace-3.sh",
+    "interval": 1,
+    "on-click": "hyprctl dispatch workspace 3",
+    "tooltip": "Switch to workspace 3"
+  },
+  "custom/workspace-4": {
+    "exec": "~/.config/waybar/scripts/workspaces/workspace-4.sh",
+    "interval": 1,
+    "on-click": "hyprctl dispatch workspace 4",
+    "tooltip": "Switch to workspace 4"
   },
 
   // ── Volume ───────────────────────────────────────────────────────
