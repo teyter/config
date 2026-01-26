@@ -10,3 +10,8 @@ sound no work
 bluetooth menu
 
 fokking diable autocomplete menu
+
+waybar transparency flickering
+tray, on right click network applet
+
+visual block backspace, space or del on multiple lines

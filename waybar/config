@@ -19,6 +19,7 @@
     "custom/power",
     "network",
     "bluetooth",
+    "tray"
   ],
 
   "modules-center": [
@@ -76,12 +77,17 @@
     "interval": 5
   },
 
+  // ── Tray ────────────────────────────────
+  "tray": {
+      "spacing": 10
+    },
+
   // ── Battery (scripted + built-in) ────────────────────────────────
   "custom/battery": {
     "exec": "~/.config/waybar/scripts/battery.sh",
     "return-type": "json",
     "interval": 10,
-    "on-click": "xfce4-power-manager-settings"
+    "on-click": "xfce4-power-manager-settings" // poweprofilesctl cycle
   },
 
 
