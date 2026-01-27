@@ -45,7 +45,7 @@
   // ── Network ──────────────────────────────────────────────────────
   "network": {
     "format-wifi": "{icon}",
-    "format-icons": ["[ 󰤯 ]", "[ 󰤟 ]", "[ 󰤢 ]", "[ 󰤥 ]", "[ 󰤨 ]"],
+    "format-icons": ["[ 󰤯  ]", "[ 󰤟  ]", "[ 󰤢  ]", "[ 󰤥  ]", "[ 󰤨  ]"],
     "format-ethernet": "󰀂",
     "format-alt": "󱛇",
     "format-disconnected": "󰖪",
