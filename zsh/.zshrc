@@ -1,4 +1,5 @@
-
+# node version manager
+source /usr/share/nvm/init-nvm.sh
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/teytur/.config/zsh/.zshrc'
 
