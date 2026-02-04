@@ -15,3 +15,6 @@ waybar transparency flickering
 tray, on right click network applet
 
 visual block backspace, space or del on multiple lines
+
+waybar
+-full progress bar not full
