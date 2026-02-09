@@ -56,6 +56,8 @@ c() {
 alias zshrc="nvim ~/.config/zsh/.zshrc"
 alias hconf="nvim ~/.config/hypr/hyprland.conf"
 alias ff="fastfetch"
+alias fvim='nvim "$(fzf)"'
+alias cdf='cd "$(find . -type d -print | fzf)"'
 alias vimrc="nvim ~/.vimrc"
 alias conf="nvim ~/.config"
 alias srcz="source ~/.config/zsh/.zshrc"
@@ -63,7 +65,7 @@ alias greyniraws="ssh -i ~/.ssh/siminn-tv-voice.pem ubuntu@54.74.55.89"
 alias gaur="adb reverse tcp:8081 tcp:8081"
 alias py="python3"
 alias reload="hyprctl reload"
-#
+
 # ls alias
 alias ll="ls -alF"
 alias la="ls -A"
