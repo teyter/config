@@ -18,3 +18,4 @@ visual block backspace, space or del on multiple lines
 
 waybar
 -full progress bar not full
+-change sh scripts to lua
